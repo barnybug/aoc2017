@@ -5,8 +5,14 @@ import java.io.File
 abstract class Solution {
     private fun packageName() = this::class.qualifiedName!!.removeSuffix("." + this::class.simpleName!!)
 
+    fun inputFile(): File =
+            File("src/${packageName()}/input.txt")
+
     fun inputLines(): List<String> =
-            File("src/${packageName()}/input.txt").readLines()
+            inputFile().readLines()
+
+    fun inputText(): String =
+            inputFile().readText()
 
     open fun answer1() = ""
     open fun answer2() = ""
