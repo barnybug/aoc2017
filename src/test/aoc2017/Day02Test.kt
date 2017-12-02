@@ -2,7 +2,6 @@ package aoc2017
 
 import org.junit.Assert.assertEquals
 import org.junit.Test
-import kotlin.coroutines.experimental.buildIterator
 
 internal class Day02Test {
     @Test
