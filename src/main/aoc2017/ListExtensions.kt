@@ -57,3 +57,10 @@ fun <T> List<T>.permute(k: Int): Sequence<List<T>> {
         return@generateSequence null
     }
 }
+
+// Cycle the list n elements 'rightwards'
+fun <T> List<T>.cycle(n: Int): List<T> =
+        if (n < 0)
+            takeLast(size+(n % size)) + take(-(n % size))
+        else
+            takeLast(n % size) + take(size-(n % size))
