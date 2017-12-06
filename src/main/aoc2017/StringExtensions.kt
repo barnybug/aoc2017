@@ -1,3 +1,3 @@
 package aoc2017
 
-fun String.words() = split(" ")
+fun String.words() = split("\\s+".toRegex())
