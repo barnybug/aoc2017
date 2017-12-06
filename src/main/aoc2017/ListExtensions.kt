@@ -64,3 +64,9 @@ fun <T> List<T>.cycle(n: Int): List<T> =
             takeLast(size+(n % size)) + take(-(n % size))
         else
             takeLast(n % size) + take(size-(n % size))
+
+// Return sliding window of sublists of size n eg listOf(1, 2, 3, 4).window(2) => [[1, 2], [2, 3], [3, 4]]
+fun <T> List<T>.window(n: Int): List<List<T>> =
+        (0..size-n).map { subList(it, it+n) }
+
+fun <T> List<T>.join() = this.joinToString("")

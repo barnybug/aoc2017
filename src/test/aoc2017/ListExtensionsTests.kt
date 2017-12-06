@@ -22,6 +22,14 @@ class ListExtensionsTests {
         assertEquals(listOf(2, 3, 1), listOf(1, 2, 3).cycle(-1))
     }
 
+    @Test
+    fun `window`() {
+        assertEquals(listOf(listOf(1, 2), listOf(2, 3)), listOf(1, 2, 3).window(2))
+        assertEquals(listOf(listOf(1), listOf(2), listOf(3)), listOf(1, 2, 3).window(1))
+        assertEquals(listOf(listOf(1, 2, 3)), listOf(1, 2, 3).window(3))
+        assertEquals(emptyList<List<Int>>(), listOf(1, 2, 3).window(4))
+    }
+
     private fun assertPermutation(list: List<List<Int>>, k: Int, set: Set<Int>) {
         assertEquals(list.distinct(), list, "all elements are unique")
         for (element in list) {
