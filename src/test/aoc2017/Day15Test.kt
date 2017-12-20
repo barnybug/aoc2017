@@ -6,21 +6,22 @@ import org.junit.Test
 internal class Day15Test {
     @Test
     fun `part 1 examples`() {
-        Assert.assertEquals(0, Day15("").answer1())
+        Assert.assertEquals(1, Day15(65, 8921).answer(5))
+        Assert.assertEquals(588, Day15(65, 8921).answer1())
     }
 
     @Test
     fun `part 1`() {
-        Assert.assertEquals(0, Day15(Inputs.readText(15)).answer1())
+        Assert.assertEquals(577, Day15(618, 814).answer1())
     }
 
     @Test
     fun `part 2 examples`() {
-        Assert.assertEquals(0, Day15("").answer2())
+        Assert.assertEquals(309, Day15(65, 8921).answer2())
     }
 
     @Test
     fun `part 2`() {
-        Assert.assertEquals(0, Day15(Inputs.readText(15)).answer2())
+        Assert.assertEquals(316, Day15(618, 814).answer2())
     }
 }
