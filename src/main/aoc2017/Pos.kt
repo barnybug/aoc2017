@@ -23,6 +23,8 @@ data class Pos(val x: Int, val y: Int): Comparable<Pos> {
 
     fun adjacent() = listOf(Pos(1, 0), Pos(1, 1), Pos(0, 1), Pos(-1, 1), Pos(-1, 0), Pos(-1, -1), Pos(0, -1), Pos(1, -1)).map { this + it }
 
+    fun adjacentWithoutDiagonals() = listOf(Pos(1, 0), Pos(0, 1), Pos(-1, 0), Pos(0, -1)).map { this + it }
+
     fun walk(direction: Pos, steps: Int) =
             (1..steps).asSequence().map { this + (direction * it) }
 
