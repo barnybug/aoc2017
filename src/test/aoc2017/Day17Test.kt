@@ -6,21 +6,16 @@ import org.junit.Test
 internal class Day17Test {
     @Test
     fun `part 1 examples`() {
-        Assert.assertEquals(0, Day17("").answer1())
+        Assert.assertEquals(638, Day17(3).answer1())
     }
 
     @Test
     fun `part 1`() {
-        Assert.assertEquals(0, Day17(Inputs.readText(17)).answer1())
-    }
-
-    @Test
-    fun `part 2 examples`() {
-        Assert.assertEquals(0, Day17("").answer2())
+        Assert.assertEquals(204, Day17(380).answer1())
     }
 
     @Test
     fun `part 2`() {
-        Assert.assertEquals(0, Day17(Inputs.readText(17)).answer2())
+        Assert.assertEquals(28954211, Day17(380).answer2())
     }
 }
