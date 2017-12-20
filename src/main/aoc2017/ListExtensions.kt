@@ -70,3 +70,7 @@ fun <T> List<T>.window(n: Int): List<List<T>> =
         (0..size-n).map { subList(it, it+n) }
 
 fun <T> List<T>.join() = this.joinToString("")
+
+fun <T> MutableList<T>.swap(a: Int, b: Int) {
+    this[a] = this[b].also { this[b] = this[a] }
+}
