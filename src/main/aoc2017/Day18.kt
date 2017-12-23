@@ -3,6 +3,18 @@ package aoc2017
 data class Instruction(val t: String, val args: List<String>) {
     val X: String get() = args[0]
     val Y: String get() = args[1]
+    val Z: String get() = args[2]
+
+    override fun toString(): String {
+        return "$t ${args.joinToString(" ")}"
+    }
+
+    companion object {
+        fun parse(line: String): Instruction {
+            val l = line.split(" ")
+            return Instruction(l[0], l.slice(1 until l.size))
+        }
+    }
 }
 
 class Program(val ins: List<Instruction>, var regs: MutableMap<String, Long>, var inputs: MutableList<Long>, var outputs: MutableList<Long>, val mode: Int) {
